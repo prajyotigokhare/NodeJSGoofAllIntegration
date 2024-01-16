@@ -1,6 +1,3 @@
-[15:34] Saurabh Bharti
-
-
 #IAM Role
 
 resource "aws_iam_role" "web-app-instance-role" {
