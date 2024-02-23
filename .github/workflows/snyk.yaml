@@ -25,11 +25,11 @@ jobs:
         run: npx snyk auth 9fb45c56-8878-4374-9de4-8b45f593c1c3
         
       #- name: Snyk Code test
-        #run: snyk code test  --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report
+        #run: snyk code test  --org=500f0e2d-6b36-446b-a7cf-3d8e99e7139b --target-name='vulner' --report
         #run: snyk code test --report
 
       - name: Snyk Open Source monitor
-        run: snyk monitor --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report
+        run: snyk monitor --org=500f0e2d-6b36-446b-a7cf-3d8e99e7139b --target-name='vulner' --report
 
       - name: Snyk IaC test and report
         run: snyk iac test --report
