@@ -25,19 +25,19 @@ jobs:
         run: npx snyk auth bb233b41-1359-484d-888c-e79d3129a095
         
       #- name: Snyk Code test
-        #run: snyk code test  --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report='vulner'|| true
-        #run: snyk code test --report || true
+        #run: snyk code test  --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report
+        #run: snyk code test --report
 
       - name: Snyk Open Source monitor
-        run: snyk monitor --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report='vulner'|| true
+        run: snyk monitor --org=14e7bbc1-feba-4f59-b6dd-27d78c5eb73b --target-name='vulner' --report
 
       - name: Snyk IaC test and report
-        run: snyk iac test --report || true
+        run: snyk iac test --report
 
       - name: Build a Docker image
         run: docker build -t your/image-to-test .
         
       - name: Snyk Container monitor
-        run: snyk container monitor node:18.13.0 --file=Dockerfile --report='vulner'|| true
+        run: snyk container monitor node:18.13.0 --file=Dockerfile --report
 
      
