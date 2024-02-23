@@ -16,7 +16,7 @@ stage('build'){
   }
   stage('Test') {
         steps {
-             snykSecurity( failOnError: false, failOnIssues: false, monitorProjectOnBuild: false, organisation: 'Prajyoti\'s_Internal_sessions', snykInstallation: 'snyk', snykTokenId: 'snykid' )
+             snykSecurity( failOnError: false, failOnIssues: false, monitorProjectOnBuild: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid' )
            }  
          }
  }
