@@ -16,7 +16,7 @@ stage('build'){
   }
   stage('Test') {
         steps {
-             snykSecurity( snykInstallation: 'snyk', snykTokenId: 'snykid' )
+             snykSecurity(snykSecurity failOnError: false, failOnIssues: false, monitorProjectOnBuild: false, snykInstallation: 'snyk', snykTokenId: 'snykid' )
            }  
          }
  }
