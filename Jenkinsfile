@@ -16,8 +16,12 @@ stage('build'){
   }
   stage('Test') {
         steps {  
-         snykSecurity (failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid'
-        additionalArguments: '--all-projects --detection-depth=3')
+         snykSecurity (failOnError: false, 
+                       failOnIssues: false, 
+                       organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', 
+                       snykInstallation: 'snyk', snykTokenId: 'snykid'
+                       additionalArguments: '--all-projects'
+                      )
         }  
          }
  }
