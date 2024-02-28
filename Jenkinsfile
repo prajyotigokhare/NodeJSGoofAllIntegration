@@ -16,7 +16,8 @@ stage('build'){
   }
   stage('Test') {
         steps {  
-         snykSecurity (failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid')
+         snykSecurity (additionalArguments: '''snyk iac test
+snyk container monitor node:latest --file=dockerfile''', failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid')
         }  
          }
  }
