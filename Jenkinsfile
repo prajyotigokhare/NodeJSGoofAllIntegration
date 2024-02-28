@@ -15,11 +15,10 @@ stage('build'){
   }
   }
   stage('Test') {
-        steps {        
-        snykSecurity (additionalArguments: '''snyk monitor --target-name="AllIntegration"
-        snyk container monitor node:latest --file=Dockerfile --target-name="AllIntegration"
-        snyk iac test --target-name="AllIntegration"''', failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', projectName: 'AllIntegration', snykInstallation: 'snyk', snykTokenId: 'snykid'
-         )
+        steps {       
+         snykSecurity (additionalArguments: '''snyk monitor --org="500f0e2d-6b36-446b-a7cf-3d8e99e7139b" --target-name="AllIntegration"
+snyk container monitor node:latest --org="500f0e2d-6b36-446b-a7cf-3d8e99e7139b" --file=Dockerfile --target-name="AllIntegration"
+snyk iac test --org="500f0e2d-6b36-446b-a7cf-3d8e99e7139b" --target-name="AllIntegration"''', failOnError: false, failOnIssues: false, projectName: 'AllIntegration', snykInstallation: 'snyk', snykTokenId: 'snykid')
         }  
          }
  }
