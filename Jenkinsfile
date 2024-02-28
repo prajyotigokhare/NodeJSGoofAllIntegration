@@ -16,7 +16,7 @@ stage('build'){
   }
   stage('Test') {
         steps {  
-         snykSecurity (additionalArguments: '''snyk iac test''', failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid')
+         snykSecurity (failOnError: false, failOnIssues: false, organisation: '500f0e2d-6b36-446b-a7cf-3d8e99e7139b', snykInstallation: 'snyk', snykTokenId: 'snykid')
         }  
          }
  }
